@@ -3,16 +3,15 @@ $( document ).ready(function() {
 //
 const bovadaUrl = 'https://www.bovada.lv/services/sports/event/v2/events/A/description/football/nfl'
 
-let i=0
-
 const getLines = async () => {
   try {
     const response = await fetch (bovadaUrl);
     if (response.ok) {
       const jsonResponse = await response.json();
       const gamesArray = jsonResponse[0].events;
-      console.log(gamesArray.length);
-      console.log(gamesArray);
+      //console.log(gamesArray.length);
+      //console.log(gamesArray);
+      let i=0
       for (i=0; i<gamesArray.length; i++) {
         let tr = $('<tr/>');
         tr.append("<td>" + gamesArray[i].displayGroups[0].markets[1].outcomes[0].description + "</td>");
@@ -31,6 +30,8 @@ const getLines = async () => {
 getLines();
 
 });
+
+//FANTASTIC GARBAGE CODE!!!!
 
 /*
 
