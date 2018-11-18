@@ -18,7 +18,11 @@ const getLines = async () => {
         const indexOfSpread = eachGame.findIndex(p => p.description == "Point Spread")
         const awayTeam = gamesArray[i].displayGroups[0].markets[indexOfSpread].outcomes[0];
         const homeTeam = gamesArray[i].displayGroups[0].markets[indexOfSpread].outcomes[1];
+        const gameTimeUnix = gamesArray[i].startTime;
+        const gameTimeHuman = new Date(gameTimeUnix * 1000);
+        console.log(gameTimeHuman)
         let tr = $('<tr/>');
+        //tr.append("<td>" + gameTimeHuman + "</td>");
         tr.append("<td>" + awayTeam.description + "</td>");
         tr.append("<td>" + awayTeam.price.handicap + "</td>");
         tr.append("<td>" +"@" + "</td>");
