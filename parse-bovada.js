@@ -10,20 +10,20 @@ const getLines = async () => {
       const jsonResponse = await response.json();
       const gamesArray = jsonResponse[0].events;
       //console.log(gamesArray.length);
-      //console.log(gamesArray);
-      console.log(gamesArray[0].displayGroups[0].markets[1].description)
+      console.log(gamesArray);
+      //console.log(gamesArray[0].displayGroups[0].markets[1].description)
       let i=0
       for (i=0; i<gamesArray.length; i++) {
-        let eachGame = gamesArray[i].displayGroups[0].markets
-        //console.log(eachGame)
-        let indexOfSpread = eachGame.findIndex(p => p.description == "Point Spread")
-        //console.log(indexOfSpread)
+        const eachGame = gamesArray[i].displayGroups[0].markets
+        const indexOfSpread = eachGame.findIndex(p => p.description == "Point Spread")
+        const awayTeam = gamesArray[i].displayGroups[0].markets[indexOfSpread].outcomes[0];
+        const homeTeam = gamesArray[i].displayGroups[0].markets[indexOfSpread].outcomes[1];
         let tr = $('<tr/>');
-        tr.append("<td>" + gamesArray[i].displayGroups[0].markets[indexOfSpread].outcomes[0].description + "</td>");
-        tr.append("<td>" + gamesArray[i].displayGroups[0].markets[indexOfSpread].outcomes[0].price.handicap + "</td>");
+        tr.append("<td>" + awayTeam.description + "</td>");
+        tr.append("<td>" + awayTeam.price.handicap + "</td>");
         tr.append("<td>" +"@" + "</td>");
-        tr.append("<td>" + gamesArray[i].displayGroups[0].markets[indexOfSpread].outcomes[1].description + "</td>");
-        tr.append("<td>" + gamesArray[i].displayGroups[0].markets[indexOfSpread].outcomes[1].price.handicap + "</td>");
+        tr.append("<td>" + homeTeam.description + "</td>");
+        tr.append("<td>" + homeTeam.price.handicap + "</td>");
         $('table').append(tr);
       };
     }
