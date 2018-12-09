@@ -41,6 +41,40 @@ $(document).ready(function() {
     }
   };
 
+  const refreshLines = async () => {
+    try {
+      const response = await fetch(bovadaUrl);
+      if (response.ok) {
+        const jsonResponse = await response.json();
+        const gamesArray = jsonResponse[0].events;
+        //console.log(gamesArray.length);
+        //console.log(gamesArray);
+        //console.log(gamesArray[0].displayGroups[0].markets[1].description)
+        let i = 0;
+        for (i = 0; i < gamesArray.length; i++) {
+          var myTable = document.getElementById("spread-table");
+          const eachGame = gamesArray[i].displayGroups[0].markets;
+          const indexOfSpread = eachGame.findIndex(
+            p => p.description == "Point Spread"
+          );
+          const awayTeamSpread =
+            gamesArray[i].displayGroups[0].markets[indexOfSpread].outcomes[0];
+          const homeTeamSpread =
+            gamesArray[i].displayGroups[0].markets[indexOfSpread].outcomes[1];
+          myTable.rows[i + 1].cells[0].innerHTML = awayTeamSpread.description;
+          myTable.rows[i + 1].cells[1].innerHTML =
+            awayTeamSpread.price.handicap;
+          myTable.rows[i + 1].cells[3].innerHTML = homeTeamSpread.description;
+          myTable.rows[i + 1].cells[4].innerHTML =
+            homeTeamSpread.price.handicap;
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   getLines();
 
   const getScores = async () => {
@@ -72,10 +106,41 @@ $(document).ready(function() {
     }
   };
 
+  const refreshScores = async () => {
+    try {
+      const response = await fetch(scoresUrl);
+      if (response.ok) {
+        const jsonResponse = await response.json();
+        //console.log(jsonResponse)
+        const scoresArray = Object.values(jsonResponse);
+        //console.log(scoresArray[0].away.abbr);
+        //console.log(jsonResponse.away.abbr)
+        for (i = 0; i < scoresArray.length; i++) {
+          var myTable = document.getElementById("score-table");
+          const awayTeamName = scoresArray[i].away.abbr;
+          const awayTeamScore = scoresArray[i].away.score.T;
+          //console.log(awayTeamScore);
+          const homeTeamName = scoresArray[i].home.abbr;
+          const homeTeamScore = scoresArray[i].home.score.T;
+          myTable.rows[i + 1].cells[0].innerHTML = awayTeamName;
+          myTable.rows[i + 1].cells[1].innerHTML = awayTeamScore;
+          myTable.rows[i + 1].cells[3].innerHTML = homeTeamScore;
+          myTable.rows[i + 1].cells[4].innerHTML = homeTeamName;
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   getScores();
+
+  let linesTimer = setInterval(refreshLines, 60000);
+  let scoresTimer = setInterval(refreshScores, 5000);
 
   //let linesTimes = setInterval(getLines, 60000);
   //let scoresTimer = setInterval(getScores, 5000);
+
 });
 
 //FANTASTIC GARBAGE CODE!!!!
