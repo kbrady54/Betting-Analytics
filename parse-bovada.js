@@ -12,7 +12,7 @@ $(document).ready(function() {
         const gamesArray = jsonResponse[0].events;
         //console.log(gamesArray.length);
         //console.log(gamesArray);
-        //console.log(gamesArray[0].displayGroups[0].markets[1].description)
+        //console.log(gamesArray[0].displayGroups[0].markets[1].description);
         let i = 0;
         for (i = 0; i < gamesArray.length; i++) {
           const eachGame = gamesArray[i].displayGroups[0].markets;
@@ -73,6 +73,7 @@ $(document).ready(function() {
       console.log(error);
     }
   };
+
 
   getLines();
 
@@ -136,6 +137,10 @@ $(document).ready(function() {
 
   let linesTimer = setInterval(refreshLines, 60000);
   let scoresTimer = setInterval(refreshScores, 5000);
+
+  //let linesTimes = setInterval(getLines, 60000);
+  //let scoresTimer = setInterval(getScores, 5000);
+
 });
 
 //FANTASTIC GARBAGE CODE!!!!
