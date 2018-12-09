@@ -12,7 +12,7 @@ $(document).ready(function() {
         const gamesArray = jsonResponse[0].events;
         //console.log(gamesArray.length);
         //console.log(gamesArray);
-        //console.log(gamesArray[0].displayGroups[0].markets[1].description)
+        //console.log(gamesArray[0].displayGroups[0].markets[1].description);
         let i = 0;
         for (i = 0; i < gamesArray.length; i++) {
           const eachGame = gamesArray[i].displayGroups[0].markets;
@@ -41,7 +41,7 @@ $(document).ready(function() {
     }
   };
 
-  //getLines();
+  getLines();
 
   const getScores = async () => {
     try {
@@ -73,10 +73,6 @@ $(document).ready(function() {
   };
 
   getScores();
-
-  setTimeout(function() {
-    window.location.reload(1);
-  }, 5000);
 
   //let linesTimes = setInterval(getLines, 60000);
   //let scoresTimer = setInterval(getScores, 5000);
