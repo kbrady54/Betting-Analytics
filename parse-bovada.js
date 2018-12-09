@@ -92,11 +92,13 @@ $(document).ready(function() {
           const homeTeamName = scoresArray[i].home.abbr;
           const homeTeamScore = scoresArray[i].home.score.T;
           let tr = $("<tr/>");
-          tr.append("<td>" + awayTeamName + "</td>");
-          tr.append("<td>" + awayTeamScore + "</td>");
-          tr.append("<td>" + "@" + "</td>");
-          tr.append("<td>" + homeTeamScore + "</td>");
-          tr.append("<td>" + homeTeamName + "</td>");
+          tr.append("<td class='scoreData'>" + awayTeamName + "</td>");
+          tr.append("<td class='scoreData'>" + awayTeamScore + "</td>");
+          tr.append(
+            "<td class='scoreData'>" + "<textarea></textarea>" + "</td>"
+          );
+          tr.append("<td class='scoreData'>" + homeTeamScore + "</td>");
+          tr.append("<td class='scoreData'>" + homeTeamName + "</td>");
           $("#score-table").append(tr);
         }
       }
