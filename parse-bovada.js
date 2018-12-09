@@ -74,7 +74,6 @@ $(document).ready(function() {
     }
   };
 
-
   getLines();
 
   const getScores = async () => {
@@ -137,10 +136,6 @@ $(document).ready(function() {
 
   let linesTimer = setInterval(refreshLines, 60000);
   let scoresTimer = setInterval(refreshScores, 5000);
-
-  //let linesTimes = setInterval(getLines, 60000);
-  //let scoresTimer = setInterval(getScores, 5000);
-
 });
 
 //FANTASTIC GARBAGE CODE!!!!
