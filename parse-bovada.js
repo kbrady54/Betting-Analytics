@@ -11,7 +11,7 @@ $(document).ready(function() {
         const jsonResponse = await response.json();
         const gamesArray = jsonResponse[0].events;
         //console.log(gamesArray.length);
-        console.log(gamesArray);
+        //console.log(gamesArray);
         //console.log(gamesArray[0].displayGroups[0].markets[1].description)
         let i = 0;
         for (i = 0; i < gamesArray.length; i++) {
@@ -134,7 +134,7 @@ $(document).ready(function() {
 
   getScores();
 
-  //let linesTimer = setInterval(refreshLines, 60000);
+  let linesTimer = setInterval(refreshLines, 60000);
   let scoresTimer = setInterval(refreshScores, 5000);
 });
 
