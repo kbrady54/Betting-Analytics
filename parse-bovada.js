@@ -84,7 +84,7 @@ $(document).ready(function() {
         //console.log(jsonResponse)
         const scoresArray = Object.values(jsonResponse);
         //console.log(scoresArray[0].away.abbr);
-        //console.log(jsonResponse.away.abbr)
+        //console.log(jsonResponse.away.abbr);
         for (i = 0; i < scoresArray.length; i++) {
           const awayTeamName = scoresArray[i].away.abbr;
           const awayTeamScore = scoresArray[i].away.score.T;
