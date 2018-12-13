@@ -1,0 +1,27 @@
+body {
+  height: 95%;
+}
+
+table {
+  border: solid 5px;
+  width: 75%;
+  height: 100%;
+}
+
+th {
+  padding: 10px 20px;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+.scoreData {
+  height: 1em;
+}
+
+textarea {
+  height: 100%;
+  width: 100%;
+}

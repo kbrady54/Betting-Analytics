@@ -1,0 +1,56 @@
+.Scoreboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 16.66rem;
+  margin: 0 0.5rem 2.3rem 0.5rem;
+  border: 5px black solid;
+  border-radius: 5px;
+}
+
+.team-name-container,
+.team-score-container,
+.game-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.team-name {
+  text-align: center;
+  border: 1px black solid;
+  flex: 1 1 0;
+}
+
+.team-score {
+  text-align: center;
+  flex: 1 1 0;
+  color: yellow;
+  background-color: black;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.team-score + .team-score {
+  border-left: solid 1px white;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+  text-align: center;
+  flex: 1 1 0;
+  border-top: 1px white solid;
+}
+
+.game-info-label {
+  color: white;
+  background-color: black;
+}
+
+.game-info-display {
+  color: yellow;
+  background-color: black;
+}
