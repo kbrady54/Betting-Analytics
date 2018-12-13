@@ -4,7 +4,7 @@ import "./Scoreboard.css";
 const temporaryScoreTemplate = {
   homeTeam: "NE",
   awayTeam: "ATL",
-  homeScore: "3",
+  homeScore: "31",
   awayScore: "28",
   quarter: "4",
   time: "13:22",
