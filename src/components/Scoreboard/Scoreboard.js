@@ -38,7 +38,7 @@ class Scoreboard extends React.Component {
               <p>{this.props.game.togo}</p>
             </div>
           </div>
-          <div className="game-info">
+          <div className="game-info-yardline">
             <div className="game-info-label">
               <p>Yd Ln</p>
             </div>
