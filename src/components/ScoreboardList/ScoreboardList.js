@@ -1,7 +1,7 @@
 import React from "react";
 import "./ScoreboardList.css";
 import Scoreboard from "../Scoreboard/Scoreboard";
-import GetScores from "../../util/GetScores/GetScores";
+import GetScores from "../../util/GetScores";
 
 class ScoreboardList extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class ScoreboardList extends React.Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.updateScores(), 5000);
+    this.timerID = setInterval(() => this.updateScores(), 1000);
   }
 
   componentWillUnmount() {

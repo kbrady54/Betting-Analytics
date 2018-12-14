@@ -1,35 +1,24 @@
 import React from "react";
 import "./Scoreboard.css";
 
-const temporaryScoreTemplate = {
-  homeTeam: "NE",
-  awayTeam: "ATL",
-  homeScore: "31",
-  awayScore: "28",
-  qtr: "4",
-  time: "13:22",
-  down: "3",
-  togo: "6"
-};
-
 class Scoreboard extends React.Component {
   render() {
     return (
       <div className="Scoreboard">
         <div className="team-name-container">
           <div className="team-name">
-            <p>{temporaryScoreTemplate.awayTeam}</p>
+            <p>{this.props.game.awayTeam}</p>
           </div>
           <div className="team-name">
-            <p>{temporaryScoreTemplate.homeTeam}</p>
+            <p>{this.props.game.homeTeam}</p>
           </div>
         </div>
         <div className="team-score-container">
           <div className="team-score">
-            <p>{temporaryScoreTemplate.awayScore}</p>
+            <p>{this.props.game.awayScore}</p>
           </div>
           <div className="team-score">
-            <p>{temporaryScoreTemplate.homeScore}</p>
+            <p>{this.props.game.homeScore}</p>
           </div>
         </div>
         <div className="game-info-container">
@@ -38,7 +27,7 @@ class Scoreboard extends React.Component {
               <p>Dn</p>
             </div>
             <div className="game-info-display">
-              <p>{temporaryScoreTemplate.down}</p>
+              <p>{this.props.game.down}</p>
             </div>
           </div>
           <div className="game-info">
@@ -46,7 +35,15 @@ class Scoreboard extends React.Component {
               <p>Dist</p>
             </div>
             <div className="game-info-display">
-              <p>{temporaryScoreTemplate.togo}</p>
+              <p>{this.props.game.togo}</p>
+            </div>
+          </div>
+          <div className="game-info">
+            <div className="game-info-label">
+              <p>Yd Ln</p>
+            </div>
+            <div className="game-info-display">
+              <p>{this.props.game.yardLine}</p>
             </div>
           </div>
           <div className="game-info">
@@ -54,7 +51,7 @@ class Scoreboard extends React.Component {
               <p>Qtr</p>
             </div>
             <div className="game-info-display">
-              <p>{temporaryScoreTemplate.qtr}</p>
+              <p>{this.props.game.qtr}</p>
             </div>
           </div>
           <div className="game-info">
@@ -62,7 +59,7 @@ class Scoreboard extends React.Component {
               <p>Time</p>
             </div>
             <div className="game-info-display">
-              <p>{temporaryScoreTemplate.time}</p>
+              <p>{this.props.game.time}</p>
             </div>
           </div>
         </div>

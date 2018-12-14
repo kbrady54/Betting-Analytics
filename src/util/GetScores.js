@@ -2,7 +2,7 @@ const scoresUrl = "http://www.nfl.com/liveupdate/scores/scores.json";
 
 const GetScores = {
   update() {
-    return fetch(scoresurl)
+    return fetch(scoresUrl)
       .then(response => {
         return response.json();
       })
@@ -15,9 +15,10 @@ const GetScores = {
             awayScore: game.away.score.T,
             homeScore: game.home.score.T,
             qtr: game.qtr,
-            time: game.time,
+            time: game.clock,
             down: game.down,
-            togo: game.togo
+            togo: game.togo,
+            yardLine: game.yl
           };
         });
       });
