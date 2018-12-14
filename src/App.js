@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Scoreboard from "./components/Scoreboard/Scoreboard";
+import ScoreboardList from "./components/ScoreboardList/ScoreboardList";
 
 class App extends Component {
   render() {
