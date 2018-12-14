@@ -6,10 +6,10 @@ const temporaryScoreTemplate = {
   awayTeam: "ATL",
   homeScore: "31",
   awayScore: "28",
-  quarter: "4",
+  qtr: "4",
   time: "13:22",
   down: "3",
-  distance: "6"
+  togo: "6"
 };
 
 class Scoreboard extends React.Component {
@@ -46,7 +46,7 @@ class Scoreboard extends React.Component {
               <p>Dist</p>
             </div>
             <div className="game-info-display">
-              <p>{temporaryScoreTemplate.distance}</p>
+              <p>{temporaryScoreTemplate.togo}</p>
             </div>
           </div>
           <div className="game-info">
@@ -54,7 +54,7 @@ class Scoreboard extends React.Component {
               <p>Qtr</p>
             </div>
             <div className="game-info-display">
-              <p>{temporaryScoreTemplate.quarter}</p>
+              <p>{temporaryScoreTemplate.qtr}</p>
             </div>
           </div>
           <div className="game-info">
