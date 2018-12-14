@@ -34,3 +34,5 @@ class ScoreboardList extends React.Component {
     );
   }
 }
+
+export default ScoreboardList;
