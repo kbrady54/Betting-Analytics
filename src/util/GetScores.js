@@ -18,7 +18,8 @@ const GetScores = {
             time: game.clock,
             down: game.down,
             togo: game.togo,
-            yardLine: game.yl
+            yardLine: game.yl,
+            possession: game.posteam
           };
         });
       });

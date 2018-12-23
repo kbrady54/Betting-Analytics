@@ -24,6 +24,14 @@ class Scoreboard extends React.Component {
         <div className="game-info-container">
           <div className="game-info">
             <div className="game-info-label">
+              <p>POS</p>
+            </div>
+            <div className="game-info-display">
+              <p>{this.props.game.possession}</p>
+            </div>
+          </div>
+          <div className="game-info">
+            <div className="game-info-label">
               <p>Dn</p>
             </div>
             <div className="game-info-display">
@@ -38,7 +46,7 @@ class Scoreboard extends React.Component {
               <p>{this.props.game.togo}</p>
             </div>
           </div>
-          <div className="game-info-yardline">
+          <div className="game-info">
             <div className="game-info-label">
               <p>Yd Ln</p>
             </div>

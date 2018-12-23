@@ -16,6 +16,18 @@
   justify-content: space-between;
 }
 
+.team-name-container {
+  flex: 1 1 0;
+}
+
+.team-score-container {
+  flex: 2 2 0;
+}
+
+.game-info-container {
+  flex: 2.5 2.5 0;
+}
+
 .team-name {
   text-align: center;
   border: 1px black solid;
