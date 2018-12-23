@@ -48,11 +48,13 @@
 .game-info-label {
   color: white;
   background-color: black;
+  flex: 1 1 0;
 }
 
 .game-info-display {
   color: yellow;
   background-color: black;
+  flex: 1 1 0;
 }
 
 .game-info-yardline {
