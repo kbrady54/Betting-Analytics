@@ -10,6 +10,7 @@ const GetScores = {
         const scores = Object.values(jsonResponse);
         return scores.map(game => {
           return {
+            game: game,
             awayTeam: game.away.abbr,
             homeTeam: game.home.abbr,
             awayScore: game.away.score.T,
